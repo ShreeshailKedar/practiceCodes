@@ -7,9 +7,8 @@ scanf("%c",&a);
 printf("ascii no. :%d",a);
 return 0;
 }
-*/
 
-/*
+
 //prog to check no. is positive or negative using bitwise shift operator
 #include<stdio.h>
 int main(){
@@ -23,8 +22,6 @@ int main(){
     }
    return 0;
 }
-*/
-
 //Reverse a number using for loop
 #include <stdio.h>
 #include <string.h>
@@ -42,5 +39,44 @@ int main(){
     dum[j]='\0';
     printf("new no :%s",dum);
     return 0;
+    }*/
+/*
+// reverse a number using DO WHILE LOOP
+#include<stdio.h>
+#include<string.h>
+int main(){
+    int j=0;
+    char num[10];
+    char dum[10];
+    printf("enter the number:");
+    scanf("%s",num);
+    int i=strlen(num)-1;
+    do{
+        dum[j]= num[i];
+        j++;
+        i--;
+    }while(i >=0);
+    dum[j]='\0';
+    printf("new no :%s",dum);
+    return 0;
+}*/
 
+// reverse a number using DO WHILE LOOP
+#include<stdio.h>
+#include<string.h>
+int main(){
+    int j=0;
+    char num[10];
+    char dum[10];
+    printf("enter the number:");
+    scanf("%s",num);
+    int i=strlen(num)-1;
+    while(i >=0){
+        dum[j]= num[i];
+        j++;
+        i--;
+    };
+    dum[j]='\0';
+    printf("new no :%s",dum);
+    return 0;
 }
