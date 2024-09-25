@@ -59,7 +59,7 @@ int main(){
     dum[j]='\0';
     printf("new no :%s",dum);
     return 0;
-}*/
+}
 
 // reverse a number using DO WHILE LOOP
 #include<stdio.h>
@@ -78,5 +78,64 @@ int main(){
     };
     dum[j]='\0';
     printf("new no :%s",dum);
+    return 0;
+}
+
+// program to check PALINDRONE number
+#include<stdio.h>
+#include<string.h>
+int main(){
+    char srt[100];
+    char rst[100];
+    int j=0;
+    printf("enter the number:\n");
+    scanf("%s",srt);
+    int len=strlen(srt);
+    for(int i=len-1;i>=0 ; i--){
+        rst[j] == srt[i];
+        j--;
+    };
+    rst[j]='\0';
+    if(strcmp(srt,rst) == 0){
+        printf("it is a palindrome no. %s",rst);
+    }else{
+        printf("it's not a palindrone number: %s",srt);
+    }
+    return 0;
+}
+
+//program to check greatest number
+#include<stdio.h>
+#include<string.h>
+
+int main(){
+    int arr[10];
+    printf("enter the numbers\n:");
+    for(int i=0;i<2;i++){
+        scanf("%d",&arr[i]);
+    }
+    if(arr[0]>arr[1]){
+        printf("%d is greater then %d",arr[0],arr[1]);
+    }else{
+        printf("%d is greater then %d",arr[1],arr[0]);
+    }
+    return 0;
+}*/
+
+//program to chcek greatest bw three number
+#include<stdio.h>
+int main(){
+    int num[10];
+    for(int i=0;i<10;i++){
+        scanf("\n%d",&num[i]);
+    }
+    int len = sizeof(num)/sizeof(num[0]);
+    int grt=num[0];
+    for(int j=1;j<len;j++){
+            if(num[j]>grt){
+                grt=num[j];
+            }
+        }
+    printf("the greatest no. is:%d",grt);
     return 0;
 }
