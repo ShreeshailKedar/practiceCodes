@@ -120,7 +120,7 @@ int main(){
         printf("%d is greater then %d",arr[1],arr[0]);
     }
     return 0;
-}*/
+}
 
 //program to chcek greatest bw three number
 #include<stdio.h>
@@ -139,3 +139,36 @@ int main(){
     printf("the greatest no. is:%d",grt);
     return 0;
 }
+
+//program to check if it is a character of number
+#include<stdio.h>
+int main(){
+    char n;
+    printf("enter a character : ");
+    scanf("%c",&n);
+    //if((n >= 'a'&& n <='z')||( n >= 'A'&& n <= 'Z')){
+      //  printf("its an alphabet");
+    //}else{
+      //  printf("its a number");
+    //}
+    if(n =='a'||n =='e'||n =='i'||n =='o'||n =='u'){
+        printf("its an vowel");
+    }else{
+        printf("its a consonent");
+    }
+    return 0;
+}
+
+//factorial of a number
+#include<stdio.h>
+int main(){
+    int num=0,fact=1;
+    printf("enter the number:");
+    scanf("%d",&num);
+    for(int i=1;i<=num;i++){
+        fact*=i;
+    }
+    printf("the factorial is:%d",fact);
+    return 0;
+
+}*/
