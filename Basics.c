@@ -171,4 +171,122 @@ int main(){
     printf("the factorial is:%d",fact);
     return 0;
 
-}*/
+}
+
+//program to perform matrix multiplication.
+#include<stdio.h>
+int main(){
+    int m1[3][3]={{3,5,4},
+                  {2,3,4},
+                  {1,1,1}};
+    int m3[3][3]={{2,1,1},
+                  {1,1,1},
+                  {1,1,1}};
+    //printf("enter the m");
+    int rslt[3][3];
+
+    //print the matrix
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            printf("%d",m1[i][j]*m3[i][j]);
+        }
+        printf("\n");
+    }
+
+    //transpose of a matric
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            rslt[j][i]=m1[i][j];
+        }
+    }
+    for(int i=0;i<3;i++){
+        for(int j=0;j<3;j++){
+            printf("%d",rslt[i][j]);
+        }
+        printf("\n");
+    }
+    
+
+    return 0;
+}
+//prog to bubble sort the given numbers
+#include<stdio.h>
+
+int main() { 
+    int n = 7;
+    int arr[n];
+
+    // Input the array
+    printf("Enter %d numbers:\n", n);
+    for(int i = 0; i < n; i++) {
+        scanf("%d", &arr[i]);
+    }
+
+    // Bubble sort algorithm using while loop
+    int i = 0;
+    while(i < n - 1) { // this while loop will help to travel the array one after another i.e (i<6)->by remaining the first it will iterate through all and every time the pointer is passed to nxt index of array 
+        int j = 0;
+        while(j < n - i - 1) {                          // this help to set the greater value at last in first iterration during that i.e ->[0<7-0-1]=[0<6] ,which means from index 0-7 we required 6 passes to complete and then j=1 updated
+            if(arr[j] > arr[j + 1]) {                   // in 2nd iteration i.e i=1->[1<7-1-1]=[0<5],which means from index 0-6 we required 5 passes to complete
+                // Swap arr[j] and arr[j+1]                                     // i=2->[2<7-2-1]=[0<4],which means from index 0-5 we req 4 passes to complete
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+            j++;
+        }
+        i++;  // Move to the next iteration
+    }
+
+   // Output the sorted array
+    printf("Sorted array in ascending order:\n");
+    for(i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    printf("\n");
+
+    return 0;
+} 
+
+//code for ascending sorting
+#include<stdio.h>
+int main(){
+    int a=7;
+    int n[a];
+    printf("enter the number:");
+    for(int i=0;i<a;i++){
+        scanf("%d",&n[i]);
+    }
+
+    for(int j=0;j<a;j++){
+        for(int k=j+1;k<a;k++){
+            if(n[j]>n[k]){
+                int l=n[j];
+                n[j]=n[k];
+                n[k]=l;
+            }
+        }
+    }
+
+    printf("result:");
+    for(int i=0;i<a;i++){
+        printf("%d ",n[i]);
+    }
+
+    return 0;
+}
+*/
+//count the number of alphabet in an string
+#include<stdio.h>
+#include<string.h>
+int main(){
+    char arr[100];
+    int n;
+    printf("enter the string:");
+    scanf("%s",&arr);
+    n=sizeof(arr)/sizeof(arr[0]);
+    printf("total char is:%d",n);
+
+
+    return 0;
+}
