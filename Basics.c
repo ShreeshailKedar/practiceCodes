@@ -275,18 +275,33 @@ int main(){
 
     return 0;
 }
-*/
-//count the number of alphabet in an string
+
+//count the number of words in an string
 #include<stdio.h>
 #include<string.h>
 int main(){
-    char arr[100];
-    int n;
+    char s[100];
+    int i=0,word=1;
     printf("enter the string:");
-    scanf("%s",&arr);
-    n=sizeof(arr)/sizeof(arr[0]);
-    printf("total char is:%d",n);
-
-
+    gets(s);
+    while(s[i]!='\0'){
+        if(s[i]==' '&& s[i+1]!=' '){
+        word++;}
+        i++;
+    }
+    printf("\n number of works=%d",word);
     return 0;
+}*/
+
+//program to access array using pointer
+#include<stdio.h>
+int main(){
+    int arr[]={2,3,5,4};
+    int *p=arr;
+    //(*p)[2]=&arr;
+    //printf("the address is :%d",*p+2);
+    for(int i=0;i<4;i++){
+        printf("%d ",*(p+i));
+    }
+   return 0; 
 }
