@@ -295,13 +295,45 @@ int main(){
 
 //program to access array using pointer
 #include<stdio.h>
-int main(){
-    int arr[]={2,3,5,4};
-    int *p=arr;
-    //(*p)[2]=&arr;
-    //printf("the address is :%d",*p+2);
-    for(int i=0;i<4;i++){
-        printf("%d ",*(p+i));
+
+int tv(int* pointing, int guccha[]){
+    for(int i=0;i<6;i++){
+        printf("  %d   ",*(pointing+i));
+         printf("  %d   ",guccha[i]);
     }
+    return 0;
+}
+int main(){
+    int arr[]={2,3,5,4,7,1};
+    int *p=arr;  
+    int res=0;                      //"&arr" will store the address of whole array in "p" pointer but if we use "*p=arr" it store only the address of first index
+    //(*p)[2]=&arr;                         // *p can only store the address of single element//
+    //printf("the address is :%d",*p+2);
+    
+     tv(p, arr);
+    //modify the array elements
+    for(int j=0;j<6;j++){                   //we have to update the pointer using "j" i.e->p[j],  
+                                            //  *(p+j)->will access the value bz of "*" and the "p"consist of the address and using "j" address of the index selected and then 10 added
+        p[j]=*(p+j)+10;
+       printf("\n%d\n",*(p+j));           
+        
+    }
+    
+    // access only positive element of an array
+    for(int k=0;k<6;k++){
+        if(k%2 == 0){
+            printf("the element is:%d\n\n",*(p+k));
+        }
+    }
+
+
+    //program to add all the elements of the array using pointer
+     for(int j=0;j<6;j++){                   
+        res = res + *(p+j);             // this will give us the addition of all the elements of the array 
+    }
+    printf("%d\n ",res);
+
+    //
+
    return 0; 
 }
