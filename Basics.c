@@ -291,7 +291,12 @@ int main(){
     }
     printf("\n number of works=%d",word);
     return 0;
-}*/
+
+
+
+
+
+
 
 //program to access array using pointer
 #include<stdio.h>
@@ -336,4 +341,90 @@ int main(){
     //
 
    return 0; 
+}
+
+
+
+//passing by refence and value
+
+#include<stdio.h>
+
+int PBV(int x){
+    x=x+10;
+    printf("\n the value of x is:%d",x);
+}
+
+int PBR(int* y){
+    *y+=2;
+     printf("\n the value of b is:%d",*y);
+}
+
+int BOTH(int m,int* n){
+    m=m+4;
+    *n=m*2;
+    printf("\n the value of m is:%d",m);
+    printf("\n the value of n is:%d",*n);
+}
+int main(){
+    int a=8;
+    int b=3;
+    int *c;
+
+    printf("\n the value of a is:%d",a);
+    PBV(a);
+    printf("\n the value of a is:%d \n",a);
+
+    printf("\n the value of b is:%d",b);
+    PBR(&b);
+    printf("\n the value of b is:%d\n",b);
+
+    BOTH(a,&b);
+    printf("\n\n the value of a is:%d",a);
+    printf("\n the value of b is:%d",b);
+
+    return 0;
+}*/
+
+//malloc function with ptr
+
+#include<stdio.h>
+#include<stdlib.h>
+int main(){
+    int n;
+    
+    printf("enter the total numbers:");
+    scanf("%d",&n);
+    
+    int *direc = (int*)malloc(n*sizeof(int)); /// this line will allocate n number of memory location in dynamic memory in linklist format i.e non contigious format bz of malloc is used
+                                                //and the address of the first allocated memory is stored in "direc" pointer
+    printf("enter the numbers:");
+    for(int i=0;i<n;i++){
+        scanf("%d",&direc[i]);
+    }
+    printf("\nthe first no is:%p\n",direc);   //it will display the address stored in direc
+    printf("the first no is:%d\n",*direc);  //it will store the value of the address stored in direc
+    printf("the first no is:%p",&direc);    //it will display the address of the pointer pointing towards direc
+    
+    int *ptr = (int*)calloc(n,sizeof(int));     //it will provide us the memory with zero intialization
+    printf("\nthe first no is:%p\n",ptr);   //it will display the address stored in direc
+    printf("the first no is:%d\n",*ptr);  //it will store the value of the address stored in direc
+    printf("the first no is:%p\n",&ptr);  
+
+
+    direc=(int*) realloc(direc,3 * sizeof(int));
+    printf("\nthe first no is:%p\n",direc);   //it will display the address stored in direc
+    printf("the first no is:%d\n",*direc);  //it will store the value of the address stored in direc
+    printf("the first no is:%p",&direc);
+    printf(" the elements are:");
+    for(int i=0;i<n;i++){                     //this for loop still print the 5 values because when we reallocate the new size of direc
+                                              //but the old data from the previous memory location is not cleared still but our system have only access to the new direc size 3 
+                                              //and if we access the memory that from the previous memory or greter than the newly assigned size  then our code will show unexpected behaviour
+
+        printf("\n%d ",direc[i]);
+    }
+    
+    
+    
+    
+    return 0;
 }
