@@ -383,7 +383,7 @@ int main(){
     printf("\n the value of b is:%d",b);
 
     return 0;
-}*/
+}
 
 //malloc function with ptr
 
@@ -422,9 +422,60 @@ int main(){
 
         printf("\n%d ",direc[i]);
     }
+    free(ptr); //this line will free the ptr 
     
-    
-    
+    printf("\nthe first no is:%p\n",ptr); 
+    ptr=NULL;                               /// but ptr still hold the prev addresses 
+                                            //so to avoid miss use of memory we have to make it "NULL"
+    printf("\nthe address is:%p\n",ptr); 
     
     return 0;
 }
+
+//recursions 
+//progran to calculate factorial using recurssion
+#include<stdio.h>
+
+int factorial(int x){
+    
+    if(x ==0 || x== 1){
+        return 1;
+    }else{
+        printf("the vakue of x is: %d\n",x);
+    return(x*factorial(x-1));
+    }
+}
+int main(){
+    int n;
+    printf("enter the number:");
+    scanf("%d",&n);
+    factorial(n);
+    printf("the factorial of %d is : %d",n,factorial(n));
+    return 0;
+}*/
+
+//fibonachi series using recurssion
+#include<stdio.h>
+int prnt_fib(int f){
+    
+    if( f==0){
+        return 0;
+    }else if(f == 1){
+        return 1;
+    }else{
+        
+    return prnt_fib(f-1)+prnt_fib(f-2);   
+    }
+}
+int main(){
+    int fib;
+    printf("enter the number:");
+    scanf("%d",fib);
+    prnt_fib(fib);
+    for(int i=0;i<fib;i++){
+        printf("%d",fib(i));
+
+    }
+    
+    }
+
