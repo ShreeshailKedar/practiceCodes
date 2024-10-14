@@ -452,7 +452,7 @@ int main(){
     factorial(n);
     printf("the factorial of %d is : %d",n,factorial(n));
     return 0;
-}*/
+}
 
 //fibonachi series using recurssion
 #include<stdio.h>
@@ -471,11 +471,103 @@ int main(){
     int fib;
     printf("enter the number:");
     scanf("%d",fib);
-    prnt_fib(fib);
+    ;
     for(int i=0;i<fib;i++){
-        printf("%d",fib(i));
+        printf("%d",prnt_fib(i));
 
     }
     
+}
+
+//program to check prime number
+#include<stdio.h>
+int main(){
+    int n=11;
+    int m=n/2;
+    int pr=1;
+    //if(n/1 == 1){
+    for(int i=2;i<m;i++){
+        if(n%i == 0){
+             pr=0;
+            break;
+        }
     }
+    if(pr==1){
+        printf("its a prime");
+    }else{
+        printf("its not a prime");
+    }
+    return 0;
+}
+//}
+
+
+// understanding structure
+
+#include<stdio.h>
+#include<string.h>
+struct person{
+    char name[50];
+    int id;
+    float weight;
+};
+
+int main(){
+    struct person p2,p1={"shivan is good",23,32.2};
+    p2.id=33;
+    strcpy(p2.name,"mahesh is happy");
+    p2.weight=30.22;
+    printf("the id is:%d \n",p1.id);
+    printf("the weight is:%f \n",p1.weight);
+    printf("name:%s \n",p1.name);
+
+    return 0;
+}*/
+
+
+// link list basics
+#include<stdio.h>
+#include<stdlib.h>
+struct node{
+    int data;
+    struct node * next;
+};
+
+void link_list_traversal(struct node *ptr){
+    while(ptr != NULL){
+    printf("elements:%d \n",ptr->data);
+    ptr=ptr->next;
+    }
+}
+
+/*void reverse_link_list(struct node* rev){
+    for(int i=)
+    printf("element:%d \n",rev->data);
+    rev
+}*/
+int main(){
+    struct node *head;
+    struct node*second;
+    struct node * third;
+
+    head=(struct node*)malloc(sizeof(struct node));
+    second=(struct node*)malloc(sizeof(struct node));
+    third=(struct node*)malloc(sizeof(struct node));
+
+    head->data = 4;
+    head->next= second;
+
+    second->data=8;
+    second->next=third;
+
+    third->data=5;
+    third->next=NULL;
+
+    link_list_traversal(head);
+    /reverse_link_list(third)
+    return 0;
+}
+
+
+// reversing the link list
 
